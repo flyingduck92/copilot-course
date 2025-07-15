@@ -73,4 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
     return { incomeData, expensesData }
   }
 
+  // Download button functionality
+  document.getElementById('downloadBtn').addEventListener('click', function () {
+    const canvas = document.getElementById('barChart')
+    const link = document.createElement('a')
+    link.href = canvas.toDataURL('image/png')
+    link.download = 'barchart.png'
+    link.click()
+  })
+
 })
